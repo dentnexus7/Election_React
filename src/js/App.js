@@ -33,7 +33,6 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    // TODO: Refactor with promise chain
     this.web3.eth.getCoinbase((err, account) => {
       this.setState({ account })
       this.election.deployed().then((electionInstance) => {
@@ -60,7 +59,6 @@ class App extends React.Component {
   }
 
   watchEvents() {
-    // TODO: trigger event when vote is counted, not when component renders
     this.electionInstance.votedEvent({}, {
       fromBlock: 0,
       toBlock: 'latest'
